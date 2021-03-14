@@ -1,0 +1,12 @@
+[Unit]
+Description=Test Service
+After=multi-user.target
+Conflicts=getty@tty1.service
+
+[Service]
+Type=simple
+ExecStart=/home/ec2-user/.venv/SteamCommunityBotEnv/bin/python3 /home/ec2-user/SteamCommunityBot/src/run_steam_community_news_bot.py --token ODEzNTk4Nzk1ODU3MTMzNjE2.YDRo7A.lXzbttJvewviOW48bNHLCUrgnx4 --jsonConfig /home/ec2-user/SteamCommunityBot/config/GuildSteamCommunityNews.json
+StandardInput=tty-force
+
+[Install]
+WantedBy=multi-user.target

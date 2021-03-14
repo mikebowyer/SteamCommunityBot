@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/SteamCommunityBot
+hooks:
+  ApplicationStop:
+    - location: scripts/application_stop.sh
+      timeout: 30
+      runas: root
+  ApplicationStart:
+    - location: scripts/application_start.sh
+      timeout: 30
+      runas: root
